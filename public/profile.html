@@ -1,0 +1,67 @@
+<div class="row well">
+	<div class="col-md-3 text-center">
+		<img src="http://api.adorable.io/avatars/180/kanak.singhal%40cgt.co.in" class="img-thumbnail img-circle" style="max-width:100%;">
+		<div class="caption">
+			<h3>Kanak singhal</h3>
+			<p>(Project Manager)</p>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<h3 class="page-header">Skills</h3>
+		<p style="font-size: 18px;line-height: 33px;">Expert : 
+			<span class="label label-success">PHP</span>
+			<span class="label label-success">JavaScript</span>
+			<span class="label label-success">AngularJS</span>
+			<span class="label label-success">MySQL</span>
+			<span class="label label-success">Java</span>
+			<span class="label label-success">J2EE</span>
+			<span class="label label-success">C++</span>
+		</p>
+		<p style="font-size: 18px;line-height: 33px;">Intermediate : 
+			<span class="label label-info">MongoDB</span>
+			<span class="label label-info">C</span>
+			<span class="label label-info">CSS</span>
+		</p>
+		<p style="font-size: 22px;line-height: 33px;">Beginner : 
+			<span class="label label-warning">Yii</span>
+			<span class="label label-warning">Yii2</span>
+			<span class="label label-warning">C#</span>
+			<span class="label label-warning">VB</span>
+		</p>
+		<!-- <p align="justify">
+		Lorem ipsum dolor sit amet, laboris massa massa quis quam imperdiet. Quis ornare neque, in leo ipsum wisi ut, vehicula quisque nullam, maecenas dui cursus. Sit proin cubilia. Erat dolor. Vulputate sit morbi morbi porta, tellus duis nunc erat. Dignissim donec luctus etiam, senectus imperdiet malesuada, wisi nibh duis adipiscing duis morbi adipiscing. Sed quisque, modi vitae elementum sapien tellus, praesent adipiscing massa metus fusce vitae nec, massa enim erat, nonummy lacus aenean consequat. Sapien mollis ut elit laoreet justo, risus wisi, ultricies eros aenean, cras integer eu in ultricies libero cursus. Natoque eget aenean eu, sed eu augue vitae nec, vitae vitae nunc quis, vestibulum wisi donec potenti tempus sed a, vel egestas non excepteur. Nunc aliquet neque congue, vel nunc.</p> -->
+	</div>
+</div>
+<div class="well">
+	<h2 class="page-header">Reputation: 356</h2>
+	<canvas id="reputation-chart" class="chart chart-bar" chart-data="repo.data"
+		chart-labels="repo.labels" chart-legend="true" chart-series="repo.series"
+		chart-colours="repo.colours" chart-options="repo.options" chart-click="onClick" height="50">
+	</canvas> 
+	<div class="row">
+		<div class="col-md-4">
+			<h3 class="page-header">Projects</h3>
+			<!-- <canvas id="doughnut" class="chart chart-doughnut"
+				chart-data="projs.data" chart-labels="projs.labels">
+			</canvas> -->
+			<p ng-repeat="p in projects">
+				
+			</p>
+			<p ng-if="!projects || projects.length==0">No Projects Yet.</p>
+		</div>
+		<div class="col-md-4">
+			<h3 class="page-header">Posts</h3>
+			<p ng-repeat="p in posts">
+				
+			</p>
+			<p ng-if="!posts || posts.length==0">No Posts Yet.</p>
+		</div>
+		<div class="col-md-4">
+			<h3 class="page-header">Answers</h3>
+			<p ng-repeat="p in answers">
+				
+			</p>
+			<p ng-if="!answers || answers.length==0">No Answers Yet.</p>
+		</div>
+	</div>
+</div>

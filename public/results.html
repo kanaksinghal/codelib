@@ -1,0 +1,56 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li ng-class="{active:filterPerm.type=='snippets'}"><a ng-click="filterPerm.type='snippets'" data-toggle="tab">Code snippets</a></li>
+    <li ng-class="{active:filterPerm.type=='modules'}"><a ng-click="filterPerm.type='modules'" data-toggle="tab">Modules</a></li>
+    <li ng-class="{active:filterPerm.type=='tips'}"><a ng-click="filterPerm.type='tips'" data-toggle="tab">Experience/Tips</a></li>
+    <li ng-class="{active:filterPerm.type=='apps'}"><a ng-click="filterPerm.type='apps'" data-toggle="tab">Apps</a></li>
+  </ul>
+  <br>
+  <div class="row">
+    <div class="col-md-8">
+      <!-- <div class="panel panel-primary" ng-repeat="thread in threads | filter:filterPerm:strict">
+        <div class="panel-heading"><h3 class="panel-title" ng-bind="thread.title"></h3></div>
+        <div class="panel-body">
+            <p ng-bind="thread.desc"></p>
+            <p>
+              <a class="btn btn-border-default btn-xs">Quick view</a>
+              <a ng-click="addToLibrary(thread)" class="btn btn-border-default btn-xs">Add to library</a>
+            </p>
+            <small>-<span ng-bind="thread.auther"></span> in <span class="label label-primary" ng-bind="thread.lang"></span> <span class="label label-primary" ng-bind="thread.type"></span></small>
+        </div>
+      </div> -->
+      <div class="well" ng-repeat="srch in matchedTechs">
+        <p>{{filteredThreads.length}} {{filterPerm.type}} found for "{{srch.st}}"
+          <span ng-show="srch.tech"> in {{srch.tech.name}}</span>
+        </p>
+        <div class="panel" ng-repeat="thread in filteredThreads=(threads | filter:filterPerm:strict)">
+          <div class="panel-body">
+            <strong><a ng-href="#/thread/{{thread.id}}" ng-bind="thread.title"></a></strong>
+            <div>
+              <p>
+                <span ng-bind="thread.desc"></span>
+                <br>
+                <a title="Quick View"><small class="glyphicon glyphicon-new-window"></small> Quick View</a>&nbsp;&nbsp;&nbsp;
+                <a title="Add to library" ng-click="addToLibrary(thread)"><small class="glyphicon glyphicon-plus"></small> Add to library</a>
+                <br>
+                <small>-By <cite title="Auther" ng-bind="thread.auther"></cite> in <span class="label label-primary" ng-bind="thread.tech"></span> <span class="label label-primary" ng-bind="thread.type"></span></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Library</h3></div>
+        <div class="panel-body">
+          <p class="text-muted" ng-show="library.length==0">No code in library!_</p>
+          <div ng-hide="library.length==0">
+            <p ng-repeat="snippet in library"><span ng-bind="snippet.title"></span> <span class="label label-primary" ng-bind="snippet.tech"></span> <a class="pull-right"><span class="glyphicon glyphicon-remove"></span></a></p>
+            <button class="btn btn-border-default">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
